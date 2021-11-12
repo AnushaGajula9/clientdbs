@@ -1,0 +1,20 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="display-4">Dashboard{{ profileDetail | json }}</h1>
+        <p class="lead text-muted">Welcome {{ profileStatus }}</p>
+        <div style="margin-bottom: 60px" *ngIf="profileStatus != null">
+          <button class="btn btn-danger" (click)="createProfileButtonClick()">
+            Create Profile
+          </button>
+        </div>
+        <app-dashboard-action></app-dashboard-action>
+        <app-display-exp
+          [exp]="profileDetail.experience"
+          (expId)="deleteExep($event)"
+        ></app-display-exp>
+      </div>
+    </div>
+  </div>
+</div>

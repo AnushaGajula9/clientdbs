@@ -1,0 +1,35 @@
+<div>
+  <h4 class="mb-2">Experience Credentials</h4>
+  <div></div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Years</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of exp">
+        <td>{{ e.company }}</td>
+        <td>{{ e.title }}</td>
+        <td>
+          {{ e.from | date: "yyyy-MM-dd" }}- {{ e.to | date: "yyyy-MM-dd" }}
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteExep(e._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Traversy Media</td>
+        <td>Instructor & Developer</td>
+        <td>02-03-2015 - Now</td>
+        <td>
+          <button class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
