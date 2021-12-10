@@ -1,35 +1,35 @@
-import { not } from '@angular/compiler/src/output/output_ast';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { LandingComponent } from './core/components/layout/landing/landing.component';
+import { not } from "@angular/compiler/src/output/output_ast";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { LandingComponent } from "./core/components/layout/landing/landing.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: "",
     component: LandingComponent,
   },
   {
-    path: 'users',
+    path: "users",
     loadChildren: () =>
-      import('./users/users.module').then((m) => m.UsersModule),
+      import("./users/users.module").then((m) => m.UsersModule),
   },
   {
-    path: 'dashboard',
+    path: "dashboard",
     loadChildren: () =>
-      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      import("./dashboard/dashboard.module").then((m) => m.DashboardModule),
   },
   {
-    path: 'profiles',
+    path: "profiles",
     loadChildren: () =>
-      import('./profiles/profiles.module').then((m) => m.ProfilesModule),
+      import("./profiles/profiles.module").then((m) => m.ProfilesModule),
   },
   {
-    path: 'exp',
-    loadChildren: () => import('./exp/exp.module').then((m) => m.ExpModule),
+    path: "exp",
+    loadChildren: () => import("./exp/exp.module").then((m) => m.ExpModule),
   },
   {
-    path: '**',
+    path: "**",
     component: NotFoundComponent,
   },
 ];
@@ -39,3 +39,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
+
